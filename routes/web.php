@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +19,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+//Auth::routes();
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('register', [App\Http\Controllers\UserController::class, 'create'])->name('register');
+Route::post('register', [App\Http\Controllers\UserController::class, 'store'])->name('user.store');
+Route::get('login', [App\Http\Controllers\UserController::class, 'login'])->name('login');
+
+Route::get('/', [ProductController::class, 'index']);
+Route::get('/search', [ProductController::class, 'search'])->name('search');
+
+
+Route::post('/cart/add', [CartController::class, 'addToCart']);
+Route::get('/cart/show', [CartController::class, 'showCart']);
+Route::post('/cart/remove', [CartController::class, 'removeFromCart']);
+Route::post('/cart/clear', [CartController::class, 'clearCart']);
+Route::get('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+
+
+
+

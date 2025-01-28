@@ -1,0 +1,442 @@
+* {
+    font-family: "Rubik", serif;
+}
+body {
+    background-color: #F2F2F2;
+}
+
+
+
+/*ШАПКА САЙТА*/
+.navbar {
+    box-shadow: 0px 5px 14px -13px rgba(0, 0, 0, 0.51);
+}
+
+.container {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/*ПОИСКОВАЯ СТРОКА*/
+.form-control {
+    /*display: block;*/
+    width: 500px;
+    padding-left: 15px;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 2px solid #333333;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    font-family: "Rubik", serif;
+}
+
+.form-control:focus {
+    outline: none; /* Убирает синюю обводку */
+    box-shadow: none; /* Убирает тень, которую может добавлять Bootstrap */
+    border-color: #333333;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.me-2 {
+    margin-right: -5px !important;
+}
+
+.btn-search {
+    width: 50px;
+    background-color: #333333;
+    border: 2px solid #333333;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: .3s;
+}
+
+.btn-search:hover {
+    color: #fff;
+    background-color: #D9A404;
+    border-color: #333333;
+    border-left: none;
+}
+
+/*КНОПКА КАТЕГОРИЯ*/
+#btn-kat {
+    background-color: #333333;
+    border: 2px solid #333333;
+    border-radius: 10px;
+    width: auto;
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+    transition: .3s;
+}
+
+#btn-kat:hover {
+    background-color: #D9A404;
+    border-color: #D9A404;
+}
+
+
+.btn-secondary {
+    font-family: "Rubik", serif;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-catalog{
+    background-color: #0D0D0D;
+    border: 2px solid #0D0D0D;
+    border-radius: 10px;
+    color: #F2F2F2;
+    font-family: "Rubik", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 39px;
+
+}
+.dropdown-menu {
+    display: none; /* Скрываем по умолчанию */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    font-family: "Rubik", serif;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(242, 203, 5, 0.16);
+}
+
+.dropdown-menu.show {
+    display: block; /* Показываем меню при добавлении класса */
+}
+
+/*КНОПКА ВОЙТИ*/
+
+.login {
+    width: 60%;
+    margin-left: 20px;
+}
+
+.enter {
+    background-color: #333333;
+    border: 2px solid #333333;
+    border-radius: 10px;
+    width: auto;
+    display: flex;
+    margin-right: 10px;
+
+
+    /*justify-content: space-between;*/
+    align-items: center;
+    padding: 15px;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.enter:hover {
+    background-color: #D9A404;
+    border-color: #D9A404;
+}
+.info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
+    gap: 5px;
+    padding: 0;
+
+
+}
+
+
+#inftxt {
+    font-family: "Rubik", serif;
+    font-weight: 500;
+    margin: 0;
+}
+
+/*СЛАЙДЕР НА ГАЛВНОМ ЭКРАНЕ*/
+
+.custom-carousel {
+    max-width: 1328px; /* Ширина слайдера */
+    margin: 20px auto;   /* Центрирование слайдера */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.custom-carousel .carousel-inner .carousel-item img {
+    width: 1328px; /* Фиксированная ширина изображения */
+    height: 300px; /* Фиксированная высота изображения */
+    object-fit: cover; /* Обрезаем изображение по высоте, сохраняя пропорции */
+    border-radius: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Уменьшаем ширину области клика */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    position: relative;
+    left: -10px; /* Сдвигаем стрелку ближе к краю */
+    right: -10px; /* Сдвигаем стрелку ближе к краю */
+}
+
+/*Почему выбирают нас*/
+.AboutUs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+}
+
+#caption {
+    font-family: "Rubik", serif;
+    font-weight: 500;
+
+}
+
+.card-info {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+
+.card {
+    width: 200px;
+    padding: 20px;
+    text-wrap: balance;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.text p {
+    font-family: "Rubik", serif;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.link p {
+    font-family: "Rubik", serif;
+    color: #4a5568;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/*Слайдер бренды*/
+.brands {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.slider-brands {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+}
+
+.brand-carousel-item img {
+    width: 100%;
+    height: auto;
+    margin-right: 22px;
+    margin-top: 20px;
+    /*margin: 20px 10px;*/
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.brand-carousel-item img:hover {
+    transform: translateY(-5px);
+}
+
+/* ПОПУЛЯРНЫЕ ТОВАРЫ */
+.card-product {
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 20px;
+    text-wrap: balance;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    text-align: left;
+    cursor: pointer;
+}
+
+.popular-products {
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.popular-products-card {
+    margin-top: 20px;
+
+}
+
+.btn-inbasket {
+    background-color: #D9A404;
+    border: 2px solid #D9A404;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: "Rubik", serif;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.btn-inbasket:hover {
+    background-color: transparent;
+}
+
+/*ИДЕИ ПОЛЕЗНЫХ ПОДАРКОВ*/
+
+.product-gift {
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+/*ПОДПИСКА НА РАССЫЛКУ*/
+
+.follow-subscribe {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: #ffffff;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-mail {
+    width: 100%;
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    font-family: "Rubik", serif;
+
+}
+
+#subscribe-txt {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.subscribe-mail {
+    margin-left: 10px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+
+}
+
+.mail {
+    width: 480px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: transparent;
+    border: 2px solid #333333;
+    appearance: none;
+    font-family: "Rubik", serif;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.mail:focus {
+    outline: none; /* Убирает синюю обводку */
+    box-shadow: none; /* Убирает тень, которую может добавлять Bootstrap */
+    border-color: #333333;
+}
+
+#subscribe {
+    background-color: #D9A404;
+    border: 2px solid #D9A404;
+    border-radius: 5px;
+    padding: 3px 8px 3px 8px;
+    margin-left: 10px;
+    font-family: "Rubik", serif;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+/*ПОДВАЛ*/
+
+.text-white {
+
+    text-decoration: none;
+    transition: .3s;
+}
+
+.text-white a:hover {
+    color: #D9A404;
+}
+
+.container-footer {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
