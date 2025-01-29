@@ -33,12 +33,12 @@
                 <button class="dropdown-catalog" id="btn-kat"><i class="fa-solid fa-bars" style="color: #F2F2F2;"></i>Каталог</button>
                 <div class="dropdown-menu">
                     {{--img src="img/tools/chainsaw.png">--}}
-                    <a class="dropdown-item" href="#">Бензо-инструменты</a>
-                    <a class="dropdown-item" href="#">Климатическое оборудование</a>
-                    <a class="dropdown-item" href="#">Насосное оборудование</a>
-                    <a class="dropdown-item" href="#">Ручные и авто-инструменты</a>
-                    <a class="dropdown-item" href="#">Сварочное оборудование</a>
-                    <a class="dropdown-item" href="#">Электро-инструменты</a>
+                    <a class="dropdown-item" href="{{ route('category.products', ['id' => 1]) }}">Бензо-инструменты</a>
+                    <a class="dropdown-item" href="{{ route('category.products', ['id' => 2]) }}">Климатическое оборудование</a>
+                    <a class="dropdown-item" href="{{ route('category.products', ['id' => 3]) }}">Насосное оборудование</a>
+                    <a class="dropdown-item" href="{{ route('category.products', ['id' => 4]) }}">Ручные и авто-инструменты</a>
+                    <a class="dropdown-item" href="{{ route('category.products', ['id' => 5]) }}">Сварочное оборудование</a>
+                    <a class="dropdown-item" href="{{ route('category.products', ['id' => 6]) }}">Электро-инструменты</a>
                 </div>
             </div>
             {{--ПОИСК--}}
@@ -57,7 +57,7 @@
                 </form>
             </div>
             <div class="login"> {{--Корзина--}}
-                <button class="enter" style="font-family: Arial; color: #F2F2F2; height: 39px;" data-bs-toggle="modal" data-bs-target="#cartModal">Корзина</button>
+                <button class="enter" style="font-family: Arial; color: #F2F2F2; height: 39px;" data-bs-toggle="modal" data-bs-target="#cartModal" id="open-cart-btn">Корзина</button>
             </div>
 {{--            <div class="login">--}}
 {{--                <a href="{{ route('login') }}" class="btn btn-primary" style="font-family: Arial; color: #FFF; height: 39px;">В корзину</a>--}}
@@ -150,12 +150,24 @@
 <div class="brands">
     <h2 id="caption">Мы сотрудничаем с брендами</h2>
     <div class="brand-carousel-item">
+        <a href="{{ route('brand.products', ['id' => 1]) }}">
         <img src="assets/img/brandslider/aeg.jpg" alt="aeg" style="width: 200px">
+        </a>
+        <a href="{{ route('brand.products', ['id' => 2]) }}">
         <img src="assets/img/brandslider/fubag.jpg" alt="fubag" style="width: 200px">
+        </a>
+        <a href="{{ route('brand.products', ['id' => 3]) }}">
         <img src="assets/img/brandslider/gigant.jpg" alt="gigant" style="width: 200px">
+        </a>
+        <a href="{{ route('brand.products', ['id' => 4]) }}">
         <img src="assets/img/brandslider/inforce.jpg" alt="inforce" style="width: 200px">
+        </a>
+        <a href="{{ route('brand.products', ['id' => 5]) }}">
         <img src="assets/img/brandslider/keyang.jpg" alt="keyang" style="width: 200px">
+        </a>
+        <a href="{{ route('brand.products', ['id' => 6]) }}">
         <img src="assets/img/brandslider/makita.jpg" alt="makita" style="width: 200px">
+        </a>
     </div>
 </div>
 {{--Популярные товары--}}
@@ -176,7 +188,7 @@
                                     <p class="card-text">{{ $product->description }}</p>
                                     <p class="card-text"><strong>Цена: {{ $product->price }} ₽</strong></p>
                                 </div>
-                                <button class="btn-inbasket mt-auto add-to-cart" data-id="{{ $product->id }}">В корзину</button>
+                                <button class="btn-inbasket mt-auto add-to-cart-btn" data-id="{{ $product->id }}" data-name="{{ $product->name }}" data-price="{{ $product->price }}">В корзину</button>
                             </div>
                         </div>
                     </div>
@@ -225,27 +237,17 @@
     </div>
 </div>
 
-<!-- Модальное окно корзины -->
-<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="cartModalLabel">Ваша корзина</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-            </div>
-            <div class="modal-body">
-                <div id="cart-items">
-                    <!-- Товары будут загружаться сюда через AJAX -->
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="{{ route('cart.checkout') }}" class="btn btn-primary">Оформить заказ</a>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-            </div>
+<!-- Модальное окно -->
+<div id="cart-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span id="close-cart" class="close">&times;</span>
+        <h2>Корзина</h2>
+        <div id="cart-items">
+            <!-- Здесь будут отображаться товары в корзине -->
         </div>
+        <button id="checkout" class="btn btn-success">Оформить заказ</button>
     </div>
 </div>
-
 {{--ПОДВАЛ--}}
 <footer class="bg-dark text-white pt-4 pb-3">
     <div class="container">

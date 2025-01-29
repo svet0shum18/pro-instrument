@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category; // Подключение модели Category
 
 
 class ProductController extends Controller
@@ -55,5 +57,51 @@ class ProductController extends Controller
 
         // Передача результатов поиска в представление
         return view('search-results', ['products' => $products, 'query' => $query]);
+    }
+
+    public function indexCart() {
+        $products = Product::all();
+        return view('home', compact('products'));
+    }
+
+    public function showProductsByCategory($id)
+    {
+        // Получаем категорию по ID
+        $category = Category::findOrFail($id);
+
+        // Получаем товары, которые принадлежат этой категории
+        $products = Product::where('id_category', $id)->get();
+
+        // Возвращаем view с товарами
+        return view('category.products', compact('category', 'products'));
+    }
+
+//    public function showProductsByBrand($id)
+//    {
+//        // Получаем категорию по ID
+//        $brand = Brand::findOrFail($id);
+//
+//        // Получаем товары, которые принадлежат этой категории
+//        $products = Product::where('id_brand', $id)->get();
+//
+//        // Возвращаем view с товарами
+//        return view('brand.products', compact('brand', 'products'));
+//    }
+
+    public function showProductsByBrand($id)
+    {
+        // Получаем бренд по ID
+//        $brand = Brand::findOrFail($id);
+//
+//        // Получаем товары этого бренда
+//        $products = Product::where('id_brand', $id)->get();
+//
+//        // Возвращаем view
+//        return view('brand.products', compact('brand', 'products'));
+        $brand = Brand::findOrFail($id); // Ищем бренд по ID
+        $products = Product::where('id_brand', $id)->get(); // Получаем товары
+
+        return view('brand.products', compact('brand', 'products'));
+
     }
 }

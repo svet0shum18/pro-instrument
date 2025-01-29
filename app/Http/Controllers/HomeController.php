@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+//        return view('home');
+
+        $brands = Brand::all();
+
+        // Передаем в представление home.blade.php
+        return view('home', compact('brands'));
+
     }
+
+
 }
