@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const dropdownToggle = document.querySelector(".dropdown-catalog");
+    const dropdownToggle = document.querySelector(".btn-catalog");
     const dropdownMenu = document.querySelector(".dropdown-menu");
 
     // Открыть/закрыть меню при клике

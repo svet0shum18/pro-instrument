@@ -3,29 +3,6 @@
 @section('title', 'Главная страница')
 
 @section('content')
-<div id="carouselExampleAutoplaying" class="carousel slide custom-carousel" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="assets/img/sliderbar/img1.png" class="d-block w-10" alt="slide1">
-        </div>
-        <div class="carousel-item">
-            <img src="assets/img/sliderbar/img2.png" class="d-block w-100" alt="slide2">
-        </div>
-        <div class="carousel-item">
-            <img src="assets/img/sliderbar/img3.png" class="d-block w-100" alt="slide3">
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Предыдущий</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Следующий</span>
-    </button>
-</div>
 {{--Почему выбирают нас?--}}
 <div class="AboutUs" id="AboutUs">
     <h2 id="caption">Почему выбирают именно нас?</h2>
@@ -169,4 +146,3 @@
     </div>
 </div>
 @endsection
-

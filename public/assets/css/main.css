@@ -8,188 +8,63 @@ body {
 
 
 /*ШАПКА САЙТА*/
-.navbar {
-    box-shadow: 0px 5px 14px -13px rgba(0, 0, 0, 0.51);
+:root {
+	--bg-color: #E9E9E9;
+	--font-color: #000;
+	--contrast-color: #2C2C2C;
+	--accent-color: #D9A404;
+	--text-color: #ffff;
 }
 
-.container {
-    padding: 0;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+* {
+	font-family: "Inter", serif;
+	margin: 0;
+	padding: 0;
 }
 
-/*ПОИСКОВАЯ СТРОКА*/
-.form-control {
-    /*display: block;*/
-    width: 500px;
-    padding-left: 15px;
-    margin-left: 20px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: transparent;
-    background-clip: padding-box;
-    border: 2px solid #333333;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    font-family: "Rubik", serif;
-}
+/* body {
+	background-color: var(--bg-color);
+} */
+/* .header-logo {
+	margin-top: 10px;
+} */
 
-.form-control:focus {
-    outline: none; /* Убирает синюю обводку */
-    box-shadow: none; /* Убирает тень, которую может добавлять Bootstrap */
-    border-color: #333333;
-}
-
-.form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.me-2 {
-    margin-right: -5px !important;
+.btn-catalog {
+	background-color: var(--contrast-color);
+	border: none;
+	border-radius: 10px;
+	color: var(--text-color);
+	font-weight: bold;
+	
 }
 
 .btn-search {
-    width: 50px;
-    background-color: #333333;
-    border: 2px solid #333333;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    transition: .3s;
+	background-color: var(--contrast-color);
+	border: none;
+	border-radius: 10px;
+	color: var(--text-color);
+	font-weight: bold;
 }
 
-.btn-search:hover {
-    color: #fff;
-    background-color: #D9A404;
-    border-color: #333333;
-    border-left: none;
+.btn-logout {
+	background-color: var(--contrast-color);
+	border: none;
+	border-radius: 10px;
+	color: var(--text-color);
+	font-weight: bold;
 }
 
-/*КНОПКА КАТЕГОРИЯ*/
-#btn-kat {
-    background-color: #333333;
-    border: 2px solid #333333;
-    border-radius: 10px;
-    width: auto;
-    display: flex;
-    /*justify-content: space-between;*/
-    align-items: center;
-    padding: 15px;
-    gap: 10px;
-    transition: .3s;
+li {
+	list-style: none;
 }
 
-#btn-kat:hover {
-    background-color: #D9A404;
-    border-color: #D9A404;
+main {
+	background-color: var(--bg-color);
 }
 
-
-.btn-secondary {
-    font-family: "Rubik", serif;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-catalog{
-    background-color: #0D0D0D;
-    border: 2px solid #0D0D0D;
-    border-radius: 10px;
-    color: #F2F2F2;
-    font-family: "Rubik", serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    height: 39px;
-
-}
-.dropdown-menu {
-    display: none; /* Скрываем по умолчанию */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #ffff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    z-index: 1000;
-    font-family: "Rubik", serif;
-}
-
-.dropdown-item {
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.dropdown-item:hover {
-    background-color: rgba(242, 203, 5, 0.16);
-}
-
-.dropdown-menu.show {
-    display: block; /* Показываем меню при добавлении класса */
-}
-
-/*КНОПКА ВОЙТИ*/
-
-.login {
-    width: 60%;
-    margin-left: 20px;
-}
-
-.enter {
-    background-color: #333333;
-    border: 2px solid #333333;
-    border-radius: 10px;
-    width: auto;
-    display: flex;
-    margin-right: 10px;
-
-
-    /*justify-content: space-between;*/
-    align-items: center;
-    padding: 15px;
-    transition: .3s;
-    text-decoration: none;
-}
-
-.enter:hover {
-    background-color: #D9A404;
-    border-color: #D9A404;
-}
-.info{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    vertical-align: center;
-    gap: 5px;
-    padding: 0;
-
-
-}
-
-
-#inftxt {
-    font-family: "Rubik", serif;
-    font-weight: 500;
-    margin: 0;
+footer {
+	background-color: var(--contrast-color);
+	color: var(--text-color);
 }
 
 /*СЛАЙДЕР НА ГАЛВНОМ ЭКРАНЕ*/
@@ -475,5 +350,56 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-catalog{
+	background-color: #0D0D0D;
+	border: 2px solid #0D0D0D;
+	border-radius: 10px;
+	color: #F2F2F2;
+	font-family: "Rubik", serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	height: 39px;
+
+}
+.dropdown-menu {
+	display: none; /* Скрываем по умолчанию */
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: #ffff;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	z-index: 1000;
+	font-family: "Rubik", serif;
+}
+
+.dropdown-item {
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.dropdown-item:hover {
+	background-color: rgba(242, 203, 5, 0.16);
+}
+
+.dropdown-menu.show {
+	display: block; /* Показываем меню при добавлении класса */
+}
+
+.header {
+	box-shadow: 0px 5px 14px -13px rgba(0, 0, 0, 0.51);
 }
 
