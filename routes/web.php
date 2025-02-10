@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\BrandController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,5 +40,12 @@ Route::get('/search', [ProductController::class, 'search'])->name('search');
 Route::get('/category/{id}', [ProductController::class, 'showProductsByCategory'])->name('category.products');
 Route::get('/brand/{id}', [ProductController::class, 'showProductsByBrand'])->name('brand.products');
 
+
+Route::middleware(['auth'])->group(function () {
+	Route::post('/add-to-cart', [CartController::class, 'addToCart']);
+	Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+	Route::post('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+	Route::post('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
+});
 
 require __DIR__.'/auth.php';

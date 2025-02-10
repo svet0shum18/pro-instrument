@@ -120,7 +120,7 @@
                                     <p class="card-text">{{ $product->description }}</p>
                                     <p class="card-text"><strong>Цена: {{ $product->price }} ₽</strong></p>
                                 </div>
-                                <button class="btn-inbasket mt-auto add-to-cart-btn" data-id="{{ $product->id }}" data-name="{{ $product->name }}" data-price="{{ $product->price }}">В корзину</button>
+                                <button class="btn-inbasket mt-auto add-to-cart-btn" id="add-to-cart-btn" data-id="{{ $product->id }}">В корзину</button>
                             </div>
                         </div>
                     </div>
